@@ -1,0 +1,24 @@
+interface EmployeeRole {
+    double calculateSalary(double baseSalary);
+}
+
+class DeveloperRole implements EmployeeRole {
+    @Override
+    public double calculateSalary(double baseSalary) { return baseSalary * 1.20; }
+}
+
+class ManagerRole implements EmployeeRole {
+    @Override
+    public double calculateSalary(double baseSalary) { return baseSalary * 1.50; }
+}
+
+class InternRole implements EmployeeRole {
+    @Override
+    public double calculateSalary(double baseSalary) { return baseSalary * 0.80; }
+}
+
+public class SalaryCalculator {
+    public double calculateSalary(EmployeeRole role, double baseSalary) {
+        return role.calculateSalary(baseSalary);
+    }
+}
