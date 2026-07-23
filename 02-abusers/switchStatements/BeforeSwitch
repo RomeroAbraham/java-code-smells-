@@ -1,0 +1,14 @@
+public class SalaryCalculator {
+    public double calculateSalary(String employeeType, double baseSalary) {
+        switch (employeeType) {
+            case "DEVELOPER":
+                return baseSalary * 1.20;
+            case "MANAGER":
+                return baseSalary * 1.50;
+            case "INTERN":
+                return baseSalary * 0.80;
+            default:
+                throw new IllegalArgumentException("Tipo de empleado desconocido");
+        }
+    }
+}
