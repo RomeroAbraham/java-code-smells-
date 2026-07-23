@@ -1,0 +1,20 @@
+public class OrderProcessor {
+    public void processOrder(String customer, double price, int quantity) {
+        // 1. Validar pedido
+        if (customer == null || customer.isEmpty()) {
+            throw new IllegalArgumentException("Cliente no válido");
+        }
+        if (price <= 0 || quantity <= 0) {
+            throw new IllegalArgumentException("Precio o cantidad inválidos");
+        }
+
+        // 2. Calcular total con impuesto
+        double subtotal = price * quantity;
+        double total = subtotal + (subtotal * 0.15);
+
+        // 3. Imprimir recibo
+        System.out.println("=== FACTURA ===");
+        System.out.println("Cliente: " + customer);
+        System.out.println("Total a pagar: $" + total);
+    }
+  }
